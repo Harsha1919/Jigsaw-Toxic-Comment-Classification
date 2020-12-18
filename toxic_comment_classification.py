@@ -203,14 +203,17 @@ Y = train.drop(['id','comment_text'],axis=1)
 
 from sklearn.model_selection import train_test_split
 
-Xtr,Xts,Ytr,Yts = train_test_split(X,Y,test_size = 0.2) 
+Xtr,Xts,Ytr,Yts = train_test_split(X,Y,test_size = 0.3) 
 print(Xtr.shape,Xts.shape,Ytr.shape,Yts.shape) 
 
 # In[37] 
 
 cv = CountVectorizer()
-Xtr = cv.fit_transform(Xtr)
-Xts = cv.transform(Xts)
+#Xtr = cv.fit_transform(Xtr)
+#Xts = cv.transform(Xts)
+cv_model = cv.fit(Xtr)
+Xtr = cv_model.transform(Xtr)
+Xts = cv_model.transform(Xts)
 
 # In[] 
 import pickle 
