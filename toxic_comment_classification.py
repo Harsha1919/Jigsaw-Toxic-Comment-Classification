@@ -203,7 +203,7 @@ Y = train.drop(['id','comment_text'],axis=1)
 
 from sklearn.model_selection import train_test_split
 
-Xtr,Xts,Ytr,Yts = train_test_split(X,Y,test_size = 0.3) 
+Xtr,Xts,Ytr,Yts = train_test_split(X,Y,test_size = 0.1) 
 print(Xtr.shape,Xts.shape,Ytr.shape,Yts.shape) 
 
 # In[37] 
